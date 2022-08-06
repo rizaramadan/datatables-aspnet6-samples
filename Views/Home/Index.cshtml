@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Samples: AspNet5 Basic Integration</h2>
+
+<table id="myTable"></table>
+
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable({
+            serverSide: true,
+            ajax: "/home/pagedata",
+            columns: [
+                {
+                    name: 'id',
+                    data: 'id',
+                    title: "Id",
+                    sortable: false,
+                    searchable: false
+                },
+                {
+                    name: 'name',
+                    data: "name",
+                    title: "Name",
+                    sortable: false,
+                    searchable: false
+                }
+            ]
+        });
+    });
+</script>
